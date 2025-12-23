@@ -14,19 +14,16 @@
 2. select msql under engine option
 3. select free tier template and single AZ-DB instance deployment
 4. name the instance identifier as source-db, also set the username and password
-5. create vpc security group and select any of the availability zone then click on create database
+5. create vpc security group (configure it such that it can communicate with the database in the two regions) and select any of the availability zone then click on create database
 
 - Navigate to north virgina to create the target database and repeat all the steps above
 
-now modify the security group in the different region so the two data base can communicate
+- Setup a connection between msql workbench and the database
+  
+1. on mysql workbench, click on mysql connections, input the database endpoint of the source-db, username and password,then click on test connections
+2. repeat this step for the target db
 
-
-now setup a connection between msql workbench and the database
-on msql, click on mysql connections, input the database endpoint, username and password,then click on test connections
-if it is successful, it w
-repeat same for the target db
-
-now lets get data into the source db
-click on managment, select data import/restore, select import from self contained file
+- Import data into the source db
+click on management, select data import/restore, select import from self contained file and click on start import
 
 
